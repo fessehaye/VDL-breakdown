@@ -18,7 +18,7 @@
 
 <Card.Root>
   <Card.Header>
-    <Card.Title class="text-primary">Bill details</Card.Title>
+    <Card.Title class="text-primary">1. Bill details</Card.Title>
     <Card.Description>Choose the registration rate to split.</Card.Description>
   </Card.Header>
   <Card.Content>

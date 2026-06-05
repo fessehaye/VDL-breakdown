@@ -16,7 +16,7 @@
     <div class="space-y-1.5">
       <Card.Title class="text-primary">
         <div class="flex justify-between w-full">
-          <span class="mr-2">Players</span>
+          <span class="mr-2">2. Players</span>
           <Button
             type="button"
             variant="default"

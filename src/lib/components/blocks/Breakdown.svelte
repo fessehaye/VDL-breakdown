@@ -7,8 +7,8 @@
 
 <Card.Root>
   <Card.Header>
-    <Card.Title class="text-primary">Breakdown</Card.Title>
-    <Card.Description>Summary of what each person owes</Card.Description>
+    <Card.Title class="text-primary">3. Breakdown</Card.Title>
+    <Card.Description>Final summary of what each person owes</Card.Description>
   </Card.Header>
   <Card.Content class="px-0 sm:px-6">
     {#if breakdown.selectedPlan}
