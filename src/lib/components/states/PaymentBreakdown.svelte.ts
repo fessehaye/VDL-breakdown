@@ -27,6 +27,12 @@ class PaymentBreakdown {
       amount: 900,
       weeks: 10,
     },
+    {
+      value: "toc",
+      label: "Tournament of Champions",
+      amount: 360,
+      weeks: 10,
+    },
   ] satisfies SeasonPlan[];
 
   players = $state<Player[]>([

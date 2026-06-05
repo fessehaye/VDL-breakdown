@@ -46,10 +46,12 @@
         <dl
           class="text-muted-foreground mt-3 grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 text-sm"
         >
-          <dt>Length of season</dt>
-          <dd class="text-foreground text-right tabular-nums">
-            {breakdown.weeks} weeks
-          </dd>
+          {#if breakdown.selectedPlan !== "toc"}
+            <dt>Length of season</dt>
+            <dd class="text-foreground text-right tabular-nums">
+              {breakdown.weeks} weeks
+            </dd>
+          {/if}
           <dt>Subtotal</dt>
           <dd class="text-foreground text-right tabular-nums">
             {formatCurrency(breakdown.subtotal)}

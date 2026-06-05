@@ -43,9 +43,11 @@
         <Label for="player-{player.id}" class="col-start-1 row-start-1">
           Player {index + 1}
         </Label>
-        <Label for="weeks-{player.id}" class="col-start-2 row-start-1">
-          Weeks
-        </Label>
+        {#if breakdown.selectedPlan !== "toc"}
+          <Label for="weeks-{player.id}" class="col-start-2 row-start-1">
+            Weeks
+          </Label>
+        {/if}
         <Input
           id="player-{player.id}"
           type="text"
@@ -53,15 +55,17 @@
           class="col-start-1 row-start-2"
           bind:value={player.name}
         />
-        <WeeksStepper
-          id="weeks-{player.id}"
-          bind:weeksPlayed={player.weeksPlayed}
-          maxWeeks={breakdown.weeks}
-          ariaLabel="Weeks for player {index + 1}"
-          decreaseAriaLabel="Decrease weeks for player {index + 1}"
-          increaseAriaLabel="Increase weeks for player {index + 1}"
-          class="col-start-2 row-start-2"
-        />
+        {#if breakdown.selectedPlan !== "toc"}
+          <WeeksStepper
+            id="weeks-{player.id}"
+            bind:weeksPlayed={player.weeksPlayed}
+            maxWeeks={breakdown.weeks}
+            ariaLabel="Weeks for player {index + 1}"
+            decreaseAriaLabel="Decrease weeks for player {index + 1}"
+            increaseAriaLabel="Increase weeks for player {index + 1}"
+            class="col-start-2 row-start-2"
+          />
+        {/if}
         <Button
           type="button"
           variant="ghost"
