@@ -14,17 +14,19 @@
     class="flex flex-row items-start justify-between gap-4 space-y-0"
   >
     <div class="space-y-1.5">
-      <Card.Title class="text-primary w-full">
-        <span class="mr-2">Players</span>
-        <Button
-          type="button"
-          variant="default"
-          size="sm"
-          onclick={breakdown.addPlayer}
-        >
-          <IconPlus class="size-4" />
-          Add player
-        </Button>
+      <Card.Title class="text-primary">
+        <div class="flex justify-between w-full">
+          <span class="mr-2">Players</span>
+          <Button
+            type="button"
+            variant="default"
+            size="sm"
+            onclick={breakdown.addPlayer}
+          >
+            <IconPlus class="size-4" />
+            Add player
+          </Button>
+        </div>
       </Card.Title>
       <Card.Description>
         Add everyone who should share this cost. Empty rows are ignored in the

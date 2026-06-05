@@ -57,7 +57,7 @@
         {/each}
       </Table.Body>
       <Table.Footer>
-        <Table.Row class="bg-primary/10">
+        <Table.Row class="bg-primary/10 hover:bg-primary/10">
           <Table.Cell>Total</Table.Cell>
           <Table.Cell></Table.Cell>
           <Table.Cell class="text-right font-medium tabular-nums">
