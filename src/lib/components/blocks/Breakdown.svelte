@@ -1,4 +1,5 @@
 <script lang="ts">
+  import NumberFlow from "@number-flow/svelte";
   import * as Card from "$lib/components/ui/card";
   import * as Table from "$lib/components/ui/table";
   import { formatCurrency } from "$lib/utils";
@@ -27,7 +28,14 @@
 
           <dt>Game cost per week</dt>
           <dd class="text-foreground text-right tabular-nums">
-            {formatCurrency(breakdown.costPerGame)}
+            <NumberFlow
+              value={breakdown.costPerGame}
+              style="currency"
+              format={{
+                style: "currency",
+                currency: "CAD",
+              }}
+            />
           </dd>
         {/if}
       </dl>
@@ -52,11 +60,18 @@
               <Table.Cell
                 class="text-muted-foreground text-right text-sm tabular-nums"
               >
-                {player.weeksPlayed}
+                <NumberFlow value={player.weeksPlayed} />
               </Table.Cell>
             {/if}
             <Table.Cell class="text-right tabular-nums">
-              {formatCurrency(breakdown.costPerGame * player.weeksPlayed)}
+              <NumberFlow
+                value={breakdown.costPerGame * player.weeksPlayed}
+                style="currency"
+                format={{
+                  style: "currency",
+                  currency: "CAD",
+                }}
+              />
             </Table.Cell>
           </Table.Row>
         {/each}

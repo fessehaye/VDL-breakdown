@@ -54,7 +54,7 @@
 >
   <button
     type="button"
-    class="{stepperControlClass} border-input inline-flex items-center justify-center border-r"
+    class="{stepperControlClass} border-input hidden lg:inline-flex items-center justify-center border-r"
     disabled={weeksPlayed <= 1}
     aria-label={decreaseAriaLabel}
     onclick={() => setWeeks(weeksPlayed - 1)}
@@ -74,7 +74,7 @@
   />
   <button
     type="button"
-    class="{stepperControlClass} border-input inline-flex items-center justify-center border-l"
+    class="{stepperControlClass} border-input hidden lg:inline-flex items-center justify-center border-l"
     disabled={weeksPlayed >= maxWeeks}
     aria-label={increaseAriaLabel}
     onclick={() => setWeeks(weeksPlayed + 1)}

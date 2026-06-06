@@ -75,10 +75,9 @@ class PaymentBreakdown {
     if (!plan) return;
     this.selectedPlan = plan.value;
     const maxWeeks = plan.weeks;
-    this.players = this.players.map((player) => ({
-      ...player,
-      weeksPlayed: Math.max(1, Math.min(player.weeksPlayed, maxWeeks)),
-    }));
+    this.players.forEach((player) => {
+      player.weeksPlayed = Math.max(1, Math.min(player.weeksPlayed, maxWeeks));
+    });
   };
 
   removePlayer = (id: string) => {

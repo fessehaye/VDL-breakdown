@@ -7,6 +7,7 @@
   import IconTrash from "@tabler/icons-svelte/icons/trash";
   import WeeksStepper from "$lib/components/blocks/WeeksStepper.svelte";
   import { breakdown } from "$lib/components/states/PaymentBreakdown.svelte";
+  import { fly } from "svelte/transition";
 </script>
 
 <Card.Root>
@@ -31,13 +32,16 @@
       <Card.Description>
         Add everyone who should share this cost. Empty rows are ignored in the
         preview. If you have players that can't play every week, you can set the
-        number of weeks they played.
+        number of weeks they played. This is useful if you have part time
+        players.
       </Card.Description>
     </div>
   </Card.Header>
   <Card.Content class="space-y-3">
     {#each breakdown.players as player, index (player.id)}
       <div
+        in:fly={{ x: 200, duration: 200 }}
+        out:fly={{ x: -200, duration: 200 }}
         class="grid grid-cols-[minmax(0,1fr)_auto_2.25rem] grid-rows-[auto_auto] gap-x-2 gap-y-2"
       >
         <Label for="player-{player.id}" class="col-start-1 row-start-1">

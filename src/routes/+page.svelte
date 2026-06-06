@@ -4,6 +4,9 @@
   import BillDetails from "$lib/components/blocks/BillDetails.svelte";
   import PlayerSplit from "$lib/components/blocks/PlayerSplit.svelte";
   import Breakdown from "$lib/components/blocks/Breakdown.svelte";
+  import { Button } from "$lib/components/ui/button";
+  import IconPlus from "@tabler/icons-svelte/icons/plus";
+  import { breakdown } from "$lib/components/states/PaymentBreakdown.svelte";
 </script>
 
 <main
@@ -39,4 +42,13 @@
   <p class="text-muted-foreground text-center text-xs">
     Amounts include 5% GST on the listed rate.
   </p>
+  <Button
+    type="button"
+    variant="default"
+    size="icon-lg"
+    onclick={breakdown.addPlayer}
+    class="bottom-5 right-5 fixed z-10 rounded-full lg:hidden"
+  >
+    <IconPlus class="size-6" />
+  </Button>
 </main>

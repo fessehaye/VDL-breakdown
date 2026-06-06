@@ -4,6 +4,7 @@
   import { Label } from "$lib/components/ui/label";
   import { formatCurrency, GST_RATE } from "$lib/utils";
   import { breakdown } from "$lib/components/states/PaymentBreakdown.svelte";
+  import NumberFlow from "@number-flow/svelte";
 
   function totalWithGst(base: number) {
     return base * (1 + GST_RATE);
@@ -49,20 +50,41 @@
           {#if breakdown.selectedPlan !== "toc"}
             <dt>Length of season</dt>
             <dd class="text-foreground text-right tabular-nums">
-              {breakdown.weeks} weeks
+              <NumberFlow value={breakdown.weeks} /> weeks
             </dd>
           {/if}
           <dt>Subtotal</dt>
           <dd class="text-foreground text-right tabular-nums">
-            {formatCurrency(breakdown.subtotal)}
+            <NumberFlow
+              value={breakdown.subtotal}
+              style="currency"
+              format={{
+                style: "currency",
+                currency: "CAD",
+              }}
+            />
           </dd>
           <dt>GST ({(GST_RATE * 100).toFixed(0)}%)</dt>
           <dd class="text-foreground text-right tabular-nums">
-            {formatCurrency(breakdown.gst)}
+            <NumberFlow
+              value={breakdown.gst}
+              style="currency"
+              format={{
+                style: "currency",
+                currency: "CAD",
+              }}
+            />
           </dd>
           <dt class="text-foreground font-medium">Total</dt>
           <dd class="text-foreground text-right font-medium tabular-nums">
-            {formatCurrency(breakdown.parsedTotal)}
+            <NumberFlow
+              value={breakdown.parsedTotal}
+              style="currency"
+              format={{
+                style: "currency",
+                currency: "CAD",
+              }}
+            />
           </dd>
         </dl>
       {/if}
